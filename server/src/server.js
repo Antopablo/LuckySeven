@@ -25,6 +25,7 @@ app.listen(PORT, () => {
 
 
 const userSchema = new Schema({
+  playerId: String,
   firstName: String,
   bestScore: Number
 })
@@ -42,10 +43,20 @@ app.get('/api/users', async (req, res) => {
 })
 
 app.put('/api/user/:id', (req, res) => {
-  const userToUpdate = User.findById(req.body.id);
-  console.log(req.body.id)
-  console.log(userToUpdate);
-  // User.findByIdAndUpdate(req.body.id);
+  const id = req.params.id;
+  const params = req.body
+
+  User.findOneAndUpdate(
+    id,
+    params,
+    function(err){
+          if(err){
+            return res.send(err);
+          }
+        console.log({message:"user updated"});
+        }
+  )
+
 })
 
 // // Delete a todo

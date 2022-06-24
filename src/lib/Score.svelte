@@ -10,7 +10,7 @@
         method: 'put',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          id: $currentAccountStore._id,
+          playerId: $currentAccountStore._id,
           firstName: $currentAccountStore.firstName,
           bestScore: score
         })
@@ -23,7 +23,7 @@
 <div class='fx tx-align-center padding-10 margin-auto'>
   <div class="tx-size-xxl margin-right-20">Score : {score}</div>
   {#if  score > bestScoreAccount} 
-  <div class="cursor-pointer margin-auto" on:click={saveBestGame}>💾</div>
+    <div class="cursor-pointer margin-auto" on:click={saveBestGame}>💾</div>
   {/if}
 </div>
 
