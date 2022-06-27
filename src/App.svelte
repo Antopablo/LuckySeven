@@ -4,6 +4,7 @@
 
   import BlackJack from "./routes/BlackJack.svelte";
   import Home from "./routes/Home.svelte";
+  import Dashboard from "./routes/Dashboard.svelte"
   import LuckySeven from "./routes/LuckySeven.svelte";
   import PageNotFound from "./routes/PageNotFound.svelte";
 
@@ -12,8 +13,9 @@
 
   const routes = {
     "/": Home,
-    "/LuckySeven": LuckySeven,
-    "/BlackJack":BlackJack,
+    "/Dashboard": Dashboard,
+    "/games/LuckySeven": LuckySeven,
+    "/games/BlackJack":BlackJack,
 
     "*": PageNotFound
   }
