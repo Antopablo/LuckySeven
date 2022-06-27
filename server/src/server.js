@@ -21,7 +21,7 @@ app.listen(PORT, () => {
 });
 
 
- const Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 
 const userSchema = new Schema({
@@ -58,14 +58,3 @@ app.put('/api/user/:id', (req, res) => {
   )
 
 })
-
-// // Delete a todo
-// app.delete('/api/todos', async (req, res, next) => {
-//   // find todo by id and delete
-//   await Todo.findByIdAndDelete(req.body.id);                   
-
-//   return res.json({
-//       message: 'Todo deleted successfully',
-//       success: true,
-//   });
-// });
