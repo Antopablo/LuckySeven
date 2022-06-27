@@ -20,6 +20,7 @@
     // @ts-ignore
     playerName = document.getElementById("InputPlayerName").value;
     currentPlayerNameStore.set(playerName);
+
     let accountIndex = registeredPlayers.findIndex(x => x.firstName === playerName);
     currentAccountStore.set(registeredPlayers[accountIndex]);
   }
@@ -53,32 +54,10 @@
             }
         )
   }
-
-    
-
-
   // dispatch new game
   function disptachNewGame() {
     dispatch('resetGame')
   }
-
-  //save only best game
-  // function saveBestGame() {
-  //   bestScore = localStorage.getItem(playerName);
-  //   let messageLog = "";
-  //   dispatch('scoreSaved', messageLog);
-  // }
-
-  // // get the best score of the player
-  // function getBestScore() {
-  //   bestScore = localStorage.getItem(playerName);
-  // }
-
-  // if playerName change
-  // $: {  
-  //   playerName, 
-  //   getBestScore()
-  // }
 
 </script>
 
@@ -113,13 +92,5 @@
     cursor:  pointer;
     margin-top: 10px;
     margin-bottom: 10px;
-  }
-
-  .margin-bottom-5-px {
-    margin-bottom: 5px;
-  }
-
-  .co-ft-error {
-    color : red;
   }
 </style>
