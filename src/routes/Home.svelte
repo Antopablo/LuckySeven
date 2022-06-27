@@ -1,6 +1,6 @@
 <script>
 import Account from "../lib/Account.svelte"
-import Dashboard from "../lib/Dashboard.svelte";
+import Dashboard from "././Dashboard.svelte";
 import { currentPlayerNameStore } from "../stores/account";
 
 let currentPlayerName;
@@ -13,9 +13,5 @@ currentPlayerNameStore.subscribe(value => {
 
 
 <main class="fx fx-1">
-  {#if !currentPlayerName}
     <Account />
-   {:else}
-    <Dashboard />
-  {/if}
 </main>

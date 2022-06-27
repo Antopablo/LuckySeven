@@ -1,6 +1,6 @@
 <script>
 import { currentPlayerNameStore } from "../stores/account";
-import {push, pop, replace} from "svelte-spa-router"
+import {push} from "svelte-spa-router"
 
 let currentPlayerName;
 
@@ -18,13 +18,13 @@ function disconnectAccount() {
 
 <main class="fx height-60-px co-bg-blue co-ft-white">
   <div class="fx-1 margin-auto tx-align-center">
-    <a href="/">Home</a>
+    <a href="#/Dashboard">Dashboard</a>
   </div>
 
   {#if currentPlayerName}
     <div class="fx jc-space-around fx-2 margin-auto">
-      <a href="#/LuckySeven">LuckySeven</a>
-      <a href="#/BlackJack">BlackJack</a>
+      <a href="#/games/LuckySeven">LuckySeven</a>
+      <a href="#/games/BlackJack">BlackJack</a>
     </div>
     
     <div class="fx-1 margin-auto tx-align-center">

@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
   import SignIn from './SignInBox.svelte';
 	import { currentAccountStore, currentPlayerNameStore } from '../stores/account'
+  import {push, pop, replace} from "svelte-spa-router"
   
   // emit
   import { createEventDispatcher } from 'svelte';
@@ -23,6 +24,8 @@
 
     let accountIndex = registeredPlayers.findIndex(x => x.firstName === playerName);
     currentAccountStore.set(registeredPlayers[accountIndex]);
+
+    push('#/Dashboard');
   }
 
   async function getUsers() {
